@@ -1,7 +1,7 @@
 # Stage 1: build with Maven
 FROM maven:3.9.4-eclipse-temurin-17 As build
 WORKDIR /app
-COPY pom.xml
+COPY pom.xml .
 RUN mvn -B dependency:go-offline
 COPY src ./src
 RUN mvn -B clean package -Dskiptests
